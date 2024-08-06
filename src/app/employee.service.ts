@@ -22,18 +22,18 @@ export class EmployeeService {
   }
 
   getEmployeeById(id: number): Observable<Employee>{
-    return this.http.get<Employee>(`${this.apiUrl}${id}`);
+    return this.http.get<Employee>(`${this.apiUrl}/${id}`);
   }
 
   updateEmployee(id: number, employee:Employee): Observable<Object>{
     alert('employee Updated successfully!!')
-    return this.http.put(`${this.apiUrl}${id}`,employee);
+    return this.http.put(`${this.apiUrl}/${id}`,employee);
   }
 
   deleteEmployee(id: number): Observable<Object>{
     alert('employee deleted successfully!!')
     location.reload();
-    return this.http.delete(`${this.apiUrl}${id}`);
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
 }
